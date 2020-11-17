@@ -1,5 +1,5 @@
 # EGGroup  
-Vue+Element+Express+Mysql+CanvaS+Webpack+Nginx+Linux
+Vue+Antd+Express+Mysql+Canvas+Webpack+Nginx+Linux
   
 1. FrontEnd
 # VUE-CLI
@@ -10,6 +10,7 @@ vue --version
 vue ui  
 npm install ant-design-vue
 npm install less@2.7.2 less-loader
+npm install vue-router
 
 # Start  
 npm install  

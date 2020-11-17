@@ -2,7 +2,7 @@
   <div :style="autoHeight" id="components-layout-demo-basic">
     <a-layout style="height:100%">
       <a-layout-header  class="highz">
-        <p class="logo"><a href="/" style="color:gold">{{msg}}</a></p>  
+        <p class="logo"><a href="/" style="color:gold">EGGroup</a></p>  
         <a-menu mode="horizontal" :default-selected-keys="['welcome']">
           <a-menu-item key='welcome' @click="changeComponent('welcome')">Home</a-menu-item>
           <a-menu-item key="game" @click="changeComponent('game')">Games</a-menu-item>
@@ -34,9 +34,6 @@ export default {
       Group,
       Games,
       Welcome
-    },
-    props: {
-        msg: String
     },
     data() {
       return {
@@ -99,7 +96,7 @@ li{
 
 .ant-menu-item{
   color:gold!important;
-  background-color: rgba(0,0,0,0.9);
+  /* background-color: rgba(0,0,0,0.9); */
 }
 
 .ant-menu-item-selected{
@@ -108,6 +105,10 @@ li{
 
 .ant-menu-horizontal{
   border-bottom:transparent;
+}
+
+.ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
+  border-bottom: 2px solid rgba(0,0,0)!important;
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
