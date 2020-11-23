@@ -1,24 +1,43 @@
 <template>
-  <div>123</div>
+  <div id="div001">
+    <canvas id="canvas" :height="browser.H" :width="browser.W"></canvas>
+    <canvas id="heroCanvas" :height="browser.H" :width="browser.W"></canvas>
+    <canvas id="bulletCanvas" :height="browser.H" :width="browser.W"></canvas>
+    <canvas id="enemyCanvas" :height="browser.H" :width="browser.W"></canvas>
+  </div>
 </template>
 
 <script>
+import start from './GameLibrary/game1lib';
 export default {
   name: "Game1",
   data() {
-    return {};
+    return {
+      browser:{
+        H:0.99*(window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight),
+        W:1*(window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth)
+      }
+    };
   },
   mounted() {
-    this.initCanvas();
+    start();
   },
-  methods: {
-    initCanvas() {
-      // let canvas = document.getElementById("canvas");
-      // let ctx = canvas.getContext("2d");
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+}
+canvas {
+  box-shadow: 0 0 10px #333;
+}
+#heroCanvas,
+#bulletCanvas,
+#enemyCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 </style>
