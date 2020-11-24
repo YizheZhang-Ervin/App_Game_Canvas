@@ -98,7 +98,7 @@ function heroAppear() {
     let heroCanvas = document.getElementById("heroCanvas");
     let context = heroCanvas.getContext("2d");
     let img = require("../../assets/game1/hero.png");
-    let hero = createHero(144, 144, heroCanvas, img, heroLoaded);
+    let hero = createHero(171, 96, heroCanvas, img, heroLoaded);
     function heroLoaded() {
         hero.draw(heroCanvas);
     }
@@ -115,7 +115,7 @@ function bulletAppear(hero, enemyArray) {
     let bURL = require("../../assets/game1/bullet.png");
     let bulletArray = new Array();
     setInterval(() => {
-        let bullet = createBullet(64, 64, bURL, hero);
+        let bullet = createBullet(44, 44, bURL, hero);
         bulletArray.push(bullet);
         bullet.draw(bCanvas);
     }, 200);
@@ -177,7 +177,7 @@ function enemyAppear(hero) {
                 clearInterval(eTimer);
                 eTimer = null;
                 alert("Game over");
-                window.location.reload();
+                window.location.replace('/games/game1');
             }
             // 判断敌机是否出屏幕
             if (enemyArray[i].isOutOfScreen()) {
@@ -224,10 +224,10 @@ function createHero(w, h, canvas, imageURL, completeCallback) {
         down:document.getElementById("downBtn")
     };
     for(let i in map){
-        map[i].onmousedown = function(){
+        map[i].ontouchstart = function(){
             hero[i] = true;
         }
-        map[i].onmouseup = function(){
+        map[i].ontouchend = function(){
             hero[i] = false;
         }
     }
