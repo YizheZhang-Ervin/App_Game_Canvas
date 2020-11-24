@@ -3,7 +3,7 @@ function start() {
     //按钮
     let arr = ["left","right","up","down"];
     arr.forEach((val)=>{
-        createButton(val);
+        adjustButton(val);
     })
     // 声音
     soundAppear();
@@ -16,10 +16,8 @@ function start() {
     // 子弹出现+飞起来
     bulletAppear(hero, enemyArray);
 }
-function createButton(direction){
-    let btn = document.createElement("input");
-    btn.id = direction + "Btn";
-    btn.type = "button";
+function adjustButton(direction){
+    let btn = document.getElementById(direction + "Btn");
     btn.style.width = "64px";
     btn.style.height = "64px";
     btn.style.position = "absolute";
@@ -27,24 +25,18 @@ function createButton(direction){
     btn.style.backgroundColor="transparent";
     btn.style.color = "white";
     if(direction=="left"){
-        btn.value = "L";
         btn.style.left = "64px";
         btn.style.bottom = "64px";
-        console.log(btn.style.top)
     }else if(direction=="right"){
-        btn.value = "R";
         btn.style.left = "192px";
         btn.style.bottom = "64px";
     }else if(direction=="up"){
-        btn.value = "Up";
         btn.style.right = "64px";
         btn.style.bottom = "64px";
     }else if(direction=="down"){
-        btn.value = "Down";
         btn.style.right = "192px";
         btn.style.bottom = "64px";
     }
-    document.getElementById("div001").appendChild(btn);
 }
 function soundAppear() {
     // 声音

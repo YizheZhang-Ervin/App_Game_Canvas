@@ -4,6 +4,12 @@
     <canvas id="heroCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="bulletCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="enemyCanvas" :height="browser.H" :width="browser.W"></canvas>
+    <div ondragstart="return false" oncontextmenu="return false" onselectstart="return false">
+      <input id="leftBtn" type="button" value="L">
+      <input id="rightBtn" type="button" value="R">
+      <input id="upBtn" type="button" value="Up">
+      <input id="downBtn" type="button" value="Down">
+    </div>
   </div>
 </template>
 
