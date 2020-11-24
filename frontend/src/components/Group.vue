@@ -96,7 +96,7 @@
             >
           </a-card>
         </a-col>
-        <a-col :span="8">
+        <!-- <a-col :span="8">
           <a-card
             :bordered="false"
             class="gold"
@@ -276,7 +276,7 @@
             <p>CYO (首席谈话官)</p>
             <a href="#" target="_blank">个人主页</a>
           </a-card>
-        </a-col>
+        </a-col> -->
       </a-row>
     </a-layout-content>
   </a-layout>
