@@ -1,5 +1,10 @@
 
 function start() {
+    //按钮
+    let arr = ["left","right","up","down"];
+    arr.forEach((val)=>{
+        createButton(val);
+    })
     // 声音
     soundAppear();
     // 加载图片+动起来
@@ -11,6 +16,37 @@ function start() {
     // 子弹出现+飞起来
     bulletAppear(hero, enemyArray);
 }
+function createButton(direction){
+    let btn = document.createElement("input");
+    btn.id = direction + "Btn";
+    btn.type = "button";
+    btn.style.width = "64px";
+    btn.style.height = "64px";
+    btn.style.position = "absolute";
+    btn.style.zIndex = '10';
+    btn.style.backgroundColor="transparent";
+    btn.style.color = "white";
+    if(direction=="left"){
+        btn.value = "<-";
+        btn.style.left = "64px";
+        btn.style.bottom = "64px";
+        console.log(btn.style.top)
+    }else if(direction=="right"){
+        btn.value = "->";
+        btn.style.left = "192px";
+        btn.style.bottom = "64px";
+    }else if(direction=="up"){
+        btn.value = "^";
+        btn.style.right = "64px";
+        btn.style.bottom = "64px";
+    }else if(direction=="down"){
+        btn.value = "V";
+        btn.style.right = "192px";
+        btn.style.bottom = "64px";
+    }
+    document.getElementById("div001").appendChild(btn);
+}
+
 function soundAppear() {
     // 声音
     // let bgsURL = require("")
@@ -181,6 +217,21 @@ function createHero(w, h, canvas, imageURL, completeCallback) {
     let y = height / 2 - h / 2;
     let x = 20;
     let hero = new Hero(x, y, w, h, imageURL, completeCallback);
+    // 按钮
+    let map = {
+        left:document.getElementById("leftBtn"),
+        right:document.getElementById("rightBtn"),
+        up:document.getElementById("upBtn"),
+        down:document.getElementById("downBtn")
+    };
+    for(let i in map){
+        map[i].onmousedown = function(){
+            hero[i] = true;
+        }
+        map[i].onmouseup = function(){
+            hero[i] = false;
+        }
+    }
     document.onkeydown = function (e) {
         let event = e || window.event;
         switch (event.keyCode) {
@@ -228,7 +279,7 @@ function createHero(w, h, canvas, imageURL, completeCallback) {
         let rightFlag = hero.x <= canvas.width - hero.w;
         let topFlag = hero.y >= 0;
         let bottomFlag = hero.y <= canvas.height - hero.h;
-        if (leftFlag && hero.left == true) {
+        if (leftFlag && (hero.left == true)) {
             hero.x -= 5;
         } else if (!leftFlag && hero.left == true) {
             hero.x = canvas.width - hero.w
