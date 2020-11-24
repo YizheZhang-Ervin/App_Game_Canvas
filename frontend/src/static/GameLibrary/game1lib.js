@@ -24,9 +24,6 @@ function adjustButton(direction){
     btn.style.zIndex = '10';
     btn.style.backgroundColor="transparent";
     btn.style.color = "white";
-    btn.ondragstart="return false" 
-    btn.oncontextmenu="return false" 
-    btn.onselectstart="return false"
     if(direction=="left"){
         btn.style.left = "64px";
         btn.style.bottom = "64px";
