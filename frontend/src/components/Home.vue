@@ -49,7 +49,7 @@ export default {
     },
     methods: {
       getHeight() {
-        this.autoHeight.height = (parseInt(window.innerHeight)) + 'px';
+        this.autoHeight.height = (parseInt(window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight)) + 'px';
       },
       changeComponent(key){
         if(key==="welcome"){

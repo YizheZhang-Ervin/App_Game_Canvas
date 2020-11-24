@@ -27,20 +27,20 @@ function createButton(direction){
     btn.style.backgroundColor="transparent";
     btn.style.color = "white";
     if(direction=="left"){
-        btn.value = "<-";
+        btn.value = "L";
         btn.style.left = "64px";
         btn.style.bottom = "64px";
         console.log(btn.style.top)
     }else if(direction=="right"){
-        btn.value = "->";
+        btn.value = "R";
         btn.style.left = "192px";
         btn.style.bottom = "64px";
     }else if(direction=="up"){
-        btn.value = "^";
+        btn.value = "Up";
         btn.style.right = "64px";
         btn.style.bottom = "64px";
     }else if(direction=="down"){
-        btn.value = "V";
+        btn.value = "Down";
         btn.style.right = "192px";
         btn.style.bottom = "64px";
     }
@@ -164,7 +164,7 @@ function enemyAppear(hero) {
         }
         enemyArray.push(enemy);
         enemy.draw(eCanvas);
-    }, 1000);
+    }, 500);
 
     // 敌机向左飞行
     let eTimer = setInterval(() => {
@@ -177,7 +177,7 @@ function enemyAppear(hero) {
                 clearInterval(eTimer);
                 eTimer = null;
                 alert("Game over");
-                window.location.replace('/games/game1');
+                location.replace('/games/game1') || window.location.replace('/games/game1');
             }
             // 判断敌机是否出屏幕
             if (enemyArray[i].isOutOfScreen()) {
@@ -227,7 +227,13 @@ function createHero(w, h, canvas, imageURL, completeCallback) {
         map[i].ontouchstart = function(){
             hero[i] = true;
         }
+        map[i].onmousedown = function(){
+            hero[i] = true;
+        }
         map[i].ontouchend = function(){
+            hero[i] = false;
+        }
+        map[i].onmouseup = function(){
             hero[i] = false;
         }
     }

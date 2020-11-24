@@ -18,16 +18,18 @@
         </a-card>
       </router-link>
 
-      <a-card
-        hoverable
-        style="display: inline-block; margin: 0 1%"
-        :bodyStyle="cardStyle"
-        :bordered="false"
-      >
-        <h1 class="gold">海龙吟·觉他</h1>
-        <p class="gold">手游</p>
-        <img :src="pics.example" />
-      </a-card>
+      <router-link to="/games/game1" target="_self">
+        <a-card
+          hoverable
+          style="display: inline-block; margin: 0 1%"
+          :bodyStyle="cardStyle"
+          :bordered="false"
+        >
+          <h1 class="gold">海龙吟·觉他</h1>
+          <p class="gold">手游</p>
+          <img :src="pics.example" />
+        </a-card>
+      </router-link>
 
       <a-card
         hoverable
@@ -80,10 +82,8 @@ export default {
 </script>
 
 <style scoped>
-
 p,
 h1 {
   text-align: center;
 }
-
 </style>

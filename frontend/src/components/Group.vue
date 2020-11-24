@@ -96,7 +96,7 @@
             >
           </a-card>
         </a-col>
-        <!-- <a-col :span="8">
+        <a-col :span="8">
           <a-card
             :bordered="false"
             class="gold"
@@ -121,7 +121,7 @@
             <a href="#" target="_blank">个人主页</a>
           </a-card>
         </a-col>
-        <a-col :span="8">
+        <!-- <a-col :span="8">
           <a-card
             :bordered="false"
             class="gold"

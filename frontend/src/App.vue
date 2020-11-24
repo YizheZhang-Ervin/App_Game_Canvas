@@ -1,8 +1,13 @@
 <template>
-  <div id="app">
-    <!-- <Home msg="EGGroup"/> -->
-    <router-view></router-view>
-    <a-back-top />
+  <div>
+    <div id="app">
+      <!-- <Home msg="EGGroup"/> -->
+      <router-view></router-view>
+      <a-back-top />
+    </div>
+    <div id="backup">
+      <h1>请打开自动旋转,并使用横屏访问页面</h1>
+    </div>
   </div>
 </template>
 
@@ -13,11 +18,36 @@ export default {
   name: 'App',
   components: {
     // Home
+  },
+  data(){
+    return{}
+  },
+  mounted(){
+
+  },
+  methods:{
+
   }
 }
 </script>
 
 <style>
+@media(min-width:500px){
+  #app{
+    display: block;
+  }
+  #backup{
+    display: none;
+  }
+}
+@media(max-width:500px){
+  #app{
+    display: none;
+  }
+  #backup{
+    display: flex;
+  }
+}
 #app {
   font-family: times, Verdana,Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

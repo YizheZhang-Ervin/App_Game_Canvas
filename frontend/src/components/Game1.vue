@@ -1,5 +1,5 @@
 <template>
-  <div id="div001">
+  <div id="div001" ondragstart="return false" oncontextmenu="return false" onselectstart="return false">
     <canvas id="canvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="heroCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="bulletCanvas" :height="browser.H" :width="browser.W"></canvas>
