@@ -5,10 +5,10 @@
     <canvas id="bulletCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="enemyCanvas" :height="browser.H" :width="browser.W"></canvas>
     <div>
-      <input id="leftBtn" type="button" value="L" class="noselect">
-      <input id="rightBtn" type="button" value="R" class="noselect">
-      <input id="upBtn" type="button" value="Up" class="noselect">
-      <input id="downBtn" type="button" value="Down" class="noselect">
+      <button id="leftBtn" type="button" class="noselect">L</button>
+      <button id="rightBtn" type="button" class="noselect">R</button>
+      <button id="upBtn" type="button" class="noselect">Up</button>
+      <button id="downBtn" type="button" class="noselect">Down</button>
     </div>
   </div>
 </template>
