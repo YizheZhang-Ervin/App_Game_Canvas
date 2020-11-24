@@ -5,7 +5,7 @@
   >
     <div style="height: 5%"></div>
     <div style="width: 300%; height: 95%">
-      <router-link to="/games/game1" target="_blank">
+      <router-link to="/games/game1" target="_self">
         <a-card
           hoverable
           style="display: inline-block; margin: 0 1%"

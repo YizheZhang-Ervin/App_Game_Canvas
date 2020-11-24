@@ -46,7 +46,6 @@ function createButton(direction){
     }
     document.getElementById("div001").appendChild(btn);
 }
-
 function soundAppear() {
     // 声音
     // let bgsURL = require("")

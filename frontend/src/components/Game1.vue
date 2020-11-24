@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import start from './GameLibrary/game1lib';
+import start from '../static/GameLibrary/game1lib.js';
 export default {
   name: "Game1",
   data() {
@@ -22,7 +22,9 @@ export default {
   mounted() {
     start();
   },
-  methods: {},
+  methods:{
+
+  }
 };
 </script>
 

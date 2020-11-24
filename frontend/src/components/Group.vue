@@ -127,7 +127,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">任仕琪</h1>
             <p>CRO (首席浪漫官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -139,7 +139,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">许诗婷</h1>
             <p>CFO (首席时尚官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -151,7 +151,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">陈倩</h1>
             <p>CJO (首席欢乐官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -163,7 +163,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">黄希</h1>
             <p>CSO (首席秘密官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -175,7 +175,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">卢彦池</h1>
             <p>CXO (首席体验官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -187,7 +187,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">周浩</h1>
             <p>CLO (首席试验官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -199,7 +199,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">朱新宇</h1>
             <p>CNO (首席自然官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -211,7 +211,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">陆祎程</h1>
             <p>CWO (首席愿望官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -223,7 +223,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">苗胜利</h1>
             <p>CVO (首席评估官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -235,7 +235,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">薛丹诚</h1>
             <p>CMO (首席机制官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -247,7 +247,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">徐轲</h1>
             <p>CUO (首席联合官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -259,7 +259,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">刘家豪</h1>
             <p>CZO (首席地区官)</p>
             <a href="#" target="_blank">个人主页</a>
@@ -271,7 +271,7 @@
             class="gold"
             style="background: transparent"
           >
-            <img :src="pics" />
+            <img :src="pics.clj" />
             <h1 class="gold">杜鹏宇</h1>
             <p>CYO (首席谈话官)</p>
             <a href="#" target="_blank">个人主页</a>
