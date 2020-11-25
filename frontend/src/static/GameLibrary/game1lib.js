@@ -5,7 +5,7 @@ function start() {
         adjustButton(val);
     })
     // 调速
-    let speed = Math.round(Math.random() * 10);
+    let speed = Math.round(Math.random() * 3);
     adjustSpeedBtn(speed);
     // 声音
     soundAppear();
@@ -22,7 +22,7 @@ function adjustSpeedBtn(speed){
     let accBtn = document.getElementById("accBtn");
     accBtn.value = speed;
     accBtn.onclick = function(){
-        accBtn.value = parseInt(accBtn.value)+2;
+        accBtn.value = parseInt(accBtn.value)+1;
     }
 }
 
