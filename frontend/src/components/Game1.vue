@@ -4,11 +4,11 @@
     <canvas id="heroCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="bulletCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="enemyCanvas" :height="browser.H" :width="browser.W"></canvas>
-    <div>
-      <input id="leftBtn" type="button" class="noselect" :style="btnBg.leftBtn"  oncontextmenu="return false">
-      <input id="rightBtn" type="button" class="noselect" :style="btnBg.rightBtn"  oncontextmenu="return false">
-      <input id="upBtn" type="button" class="noselect" :style="btnBg.upBtn"  oncontextmenu="return false">
-      <input id="downBtn" type="button" class="noselect" :style="btnBg.downBtn"  oncontextmenu="return false">
+    <div oncontextmenu="return false">
+      <input id="leftBtn" type="button" :style="btnBg.leftBtn" class="noselect">
+      <input id="rightBtn" type="button" :style="btnBg.rightBtn" class="noselect">
+      <input id="upBtn" type="button" :style="btnBg.upBtn" class="noselect">
+      <input id="downBtn" type="button" :style="btnBg.downBtn" class="noselect">
     </div>
   </div>
 </template>
@@ -54,8 +54,11 @@ canvas {
   top: 0;
 }
 .noselect{
-  -moz-user-select:none;
-  -webkit-user-select:none;
-  user-select:none;
+  -webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
 }
 </style>
