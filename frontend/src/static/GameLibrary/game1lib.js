@@ -22,7 +22,6 @@ function adjustButton(direction){
     btn.style.height = "64px";
     btn.style.position = "absolute";
     btn.style.zIndex = '10';
-    btn.style.backgroundColor="transparent";
     btn.style.color = "white";
     if(direction=="left"){
         btn.style.left = "64px";
@@ -169,7 +168,7 @@ function enemyAppear(hero) {
                 clearInterval(eTimer);
                 eTimer = null;
                 alert("Game over");
-                location.replace('/games/game1') || window.location.replace('/games/game1');
+                window.location.replace('/');
             }
             // 判断敌机是否出屏幕
             if (enemyArray[i].isOutOfScreen()) {
