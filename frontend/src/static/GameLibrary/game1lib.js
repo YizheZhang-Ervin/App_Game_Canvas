@@ -215,14 +215,16 @@ function createHero(w, h, canvas, imageURL, completeCallback) {
         down:document.getElementById("downBtn")
     };
     for(let i in map){
-        map[i].ontouchstart = function(){
+        map[i].ontouchstart = function(e){
             hero[i] = true;
+            e.preventDefault();
         }
         map[i].onmousedown = function(){
             hero[i] = true;
         }
-        map[i].ontouchend = function(){
+        map[i].ontouchend = function(e){
             hero[i] = false;
+            e.preventDefault();
         }
         map[i].onmouseup = function(){
             hero[i] = false;

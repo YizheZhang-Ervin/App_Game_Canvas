@@ -4,11 +4,11 @@
     <canvas id="heroCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="bulletCanvas" :height="browser.H" :width="browser.W"></canvas>
     <canvas id="enemyCanvas" :height="browser.H" :width="browser.W"></canvas>
-    <div oncontextmenu="return false">
-      <input id="leftBtn" type="button" :style="btnBg.leftBtn" class="noselect">
-      <input id="rightBtn" type="button" :style="btnBg.rightBtn" class="noselect">
-      <input id="upBtn" type="button" :style="btnBg.upBtn" class="noselect">
-      <input id="downBtn" type="button" :style="btnBg.downBtn" class="noselect">
+    <div oncontextmenu="return false" class="noselect">
+      <input id="leftBtn" type="button" :style="btnBg.leftBtn">
+      <input id="rightBtn" type="button" :style="btnBg.rightBtn">
+      <input id="upBtn" type="button" :style="btnBg.upBtn">
+      <input id="downBtn" type="button" :style="btnBg.downBtn">
     </div>
   </div>
 </template>
