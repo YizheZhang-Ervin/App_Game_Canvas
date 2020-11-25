@@ -1,10 +1,12 @@
-
 function start() {
     //按钮
     let arr = ["left","right","up","down"];
     arr.forEach((val)=>{
         adjustButton(val);
     })
+    // 调速
+    let speed = Math.round(Math.random() * 10);
+    adjustSpeedBtn(speed);
     // 声音
     soundAppear();
     // 加载图片+动起来
@@ -12,10 +14,18 @@ function start() {
     // 主角出场+动起来
     let hero = heroAppear();
     // 创建敌机+向下飞行
-    let enemyArray = enemyAppear(hero);
+    let enemyArray = enemyAppear(hero,speed);
     // 子弹出现+飞起来
     bulletAppear(hero, enemyArray);
 }
+function adjustSpeedBtn(speed){
+    let accBtn = document.getElementById("accBtn");
+    accBtn.value = speed;
+    accBtn.onclick = function(){
+        accBtn.value = parseInt(accBtn.value)+2;
+    }
+}
+
 function adjustButton(direction){
     let btn = document.getElementById(direction + "Btn");
     btn.style.width = "64px";
@@ -67,14 +77,14 @@ function bgAppear() {
         context.clearRect(0, 0, width, height);
         context.save();
         //更新位置
-        backgroundOffset += speed;
-        if (backgroundOffset >= width) {
+        backgroundOffset -= speed;
+        if (backgroundOffset <= -width) {
             backgroundOffset = 0;
         }
         context.translate(backgroundOffset, 0);
         //绘制图片
         context.drawImage(image, 0, 0, width, height);
-        context.drawImage(image, -width, 0, width, height);
+        context.drawImage(image, width, 0, width, height);
         // 获取存储状态
         context.restore();
     }
@@ -131,25 +141,29 @@ function bulletAppear(hero, enemyArray) {
         }
     }, 30);
 }
-function enemyAppear(hero) {
+function enemyAppear(hero,speed) {
     let eCanvas = document.getElementById("enemyCanvas");
     let eContext = eCanvas.getContext("2d");
     let enemyArray = new Array();
     setInterval(() => {
+        // speed
+        let accBtn = document.getElementById("accBtn");
+        speed = parseInt(accBtn.value);
+
         let number = Math.round(Math.random() * (3 - 1) + 1);
         let enemy;
         let eURL = require("../../assets/game1/enemy.png");
         switch (number) {
             case 1: {
-                enemy = createEnemy(0, 0, eURL, eCanvas);
+                enemy = createEnemy(0, 0, eURL, eCanvas,speed);
                 break;
             }
             case 2: {
-                enemy = createEnemy(128, 0, eURL, eCanvas);
+                enemy = createEnemy(128, 0, eURL, eCanvas,speed);
                 break;
             }
             case 3: {
-                enemy = createEnemy(256, 0, eURL, eCanvas);
+                enemy = createEnemy(256, 0, eURL, eCanvas,speed);
                 break;
             }
         }
@@ -332,7 +346,7 @@ function createBullet(bWidth, bHeight, bURL, hero) {
     // bSound.play();
     return bullet;
 }
-function Enemy(planeW, planeH, imageURL, canvas) {
+function Enemy(planeW, planeH, imageURL, canvas,speed) {
     let canvasWidth = canvas.width;
     let canvasHeight = canvas.height;
     let y = Math.round(Math.random() * (canvasHeight - 128 - 0) + 0);
@@ -340,7 +354,6 @@ function Enemy(planeW, planeH, imageURL, canvas) {
     this.x = canvasWidth;
     this.w = 128;
     this.h = 128;
-    this.speed = Math.round(Math.random() * (10 - 3) + 3) / 10;
     this.image = new Image();
     this.image.src = imageURL;
     this.draw = function (ecanvas) {
@@ -352,7 +365,7 @@ function Enemy(planeW, planeH, imageURL, canvas) {
         );
     };
     this.move = function () {
-        this.x -= this.speed;
+        this.x -= speed;
     };
     this.isOutOfScreen = function () {
         if (this.x < 0) {
@@ -367,8 +380,8 @@ function Enemy(planeW, planeH, imageURL, canvas) {
             // endSound.play();
         };
 }
-function createEnemy(w, h, imageURL, canvas) {
-    let enemy = new Enemy(w, h, imageURL, canvas);
+function createEnemy(w, h, imageURL, canvas,speed) {
+    let enemy = new Enemy(w, h, imageURL, canvas,speed);
     return enemy;
 }
 function isEnemyHitHero(obj1, obj2) {

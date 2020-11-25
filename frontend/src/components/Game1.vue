@@ -9,6 +9,8 @@
       <input id="rightBtn" type="button" :style="btnBg.rightBtn">
       <input id="upBtn" type="button" :style="btnBg.upBtn">
       <input id="downBtn" type="button" :style="btnBg.downBtn">
+      <label id="accLbl">调速:</label>
+      <input id="accBtn" type="button" value="点击加速(不可反悔)">
     </div>
   </div>
 </template>
@@ -60,5 +62,28 @@ canvas {
 	-moz-user-select:none;
 	-ms-user-select:none;
 	user-select:none;
+}
+#accBtn{
+  width : 192px;
+  height : 64px;
+  position : absolute;
+  top : 0px;
+  left : 64px;
+  z-index : 10;
+  color : white;
+  background-color : transparent;
+}
+
+#accLbl{
+  width : 64px;
+  height : 64px;
+  position : absolute;
+  top : 0px;
+  left : 0px;
+  z-index : 10;
+  color : white;
+  background-color : transparent;
+  line-height: 64px;
+  text-align: center;
 }
 </style>
