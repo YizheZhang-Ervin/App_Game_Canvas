@@ -5,7 +5,7 @@ function start() {
         adjustButton(val);
     })
     // 调速
-    let speed = Math.round(Math.random() * 3);
+    let speed = Math.round(Math.random() * 3+1);
     adjustSpeedBtn(speed);
     // 声音
     soundAppear();
