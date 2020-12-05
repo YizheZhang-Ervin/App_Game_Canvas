@@ -1,6 +1,9 @@
 # EGGroup  
 Vue+Antd+Express+Mysql+Canvas+Webpack+Nginx+Linux
   
+## Style  
+Dominant hue: gold color with black background-color  
+
 ## FrontEnd
 ### VUE-CLI
 npm install -g @vue/cli  
