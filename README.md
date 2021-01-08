@@ -1,8 +1,5 @@
 # EGGroup  
-Vue+Antd+Express+Mysql+Canvas+Webpack+Nginx+Linux
-  
-## Style  
-Dominant hue: gold color with black background-color  
+Vue+Antd+Express+Mysql+Canvas
 
 ## FrontEnd
 ### VUE-CLI
@@ -21,7 +18,7 @@ npm run serve
 http://localhost:8080/
 
 ## BackEnd  
-### Express
+### Express Framework
 npm install express-generator  
 express -v
 express xxProject -e
